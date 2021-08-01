@@ -1,0 +1,10 @@
+main
+	a=random(42)
+	b=random("getnumber")+10
+	cycle a<20
+		if b==0
+			print("hello "" world");
+		endif
+		a=a+1
+	endcycle
+endmain
