@@ -11,3 +11,12 @@ All the classes are inserted in the "flokka" namespace to effectively separate t
 In facts...
 an arbitrarily long string which can also be an entire text file is split into n user-defined tokens. 
 
+Definition:
+  flokka::dbtoken <user defined tokens database>
+  
+API:
+  dbtoken.add_type( <name of new type> string)
+  dbtoken.add_token( <univoque token name> string, <name of type defined with "add_type()"> string
+  
+ 
+  
