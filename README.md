@@ -1,4 +1,4 @@
-## Flokka
+# Flokka
 ### a simple text analyzer / parser written in C++
 #### by Stefano Braconi, 2021 calico.vae@gmail.com
 <p>I wanted to create this simple library in order to have a token recognition system with the possibility of relating them to each other.</p>
@@ -7,18 +7,17 @@
 <hr>
 
 Namespace:</br>
-  <code>flokka::dbtoken <user defined tokens database></code>
+<code>flokka::dbtoken <user defined tokens database></code>
   
-API:
-	
-<code>dbtoken::add_type( "univoque new type" string)</code>
-
-example:
-	
-<code>t.add_type("keywords");</code><br />
+### <p>API reference</p>
+#### **<code>dbtoken::add_type( "univoque new type" string)</code>**
+example:<br/>
+<code>flokka::dbtoken t;</code> database declaration<br/>
+<code>t.add_type("keywords");</code> adding types...<br/>
 <code>t.add_type("identifiers");</code><br />
 <code>t.add_type("symbols");</code><br />
 <code>t.add_type("operators");</code><br />
+<hr>
 	
 	
   
