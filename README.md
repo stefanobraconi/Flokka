@@ -13,7 +13,7 @@ Definition:</br>
   
 API:
 	
-<code>dbtoken.add_type( "univoque new type" string)</code>
+<code>dbtoken::add_type( "univoque new type" string)</code>
 
 example:
 	
