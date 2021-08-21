@@ -49,13 +49,14 @@ int main(int argc, char** argv) {
 
 		string program;
 		load("test.txt", program);
-
-		flokka::flokka_start(program,t, parsed,'.');
-
-		cout<<left<<setw(6)<<"DEEP"<<setw(20)<<"VALUE"<<setw(20)<<"TOKEN"<<setw(20)<<"TYPE"<<setw(12)<<"REL_CODE"<<setw(12)<<"REL_SHIFT"<<setw(12)<<"STATUS"<<setw(12)<<"IS_CONTAINER"<<endl;
-		for (int i=0; i<parsed.size(); i++) {
-			cout<<left<<setw(6)<<parsed[i].get_deep()<<setw(20)<<parsed[i].get_value()<<setw(20)<<parsed[i].get_token_value()<<setw(20)<<parsed[i].get_token_type()<<setw(12)<<parsed[i].get_token_relation_code()<<setw(12)<<parsed[i].get_token_relation_shift()<<setw(12)<<parsed[i].get_status()<<setw(12)<<parsed[i].get_token_is_container()<<endl;
+		flokka::flokka_analyzer fk;
+		fk.start(program,t);
+        fk.delete_tokens("\u0022");
+		//flokka::flokka_start(program,t, parsed,'.');
+		for (int i=0; i<fk.parsed.size(); i++) {
+		cout<<left<<setw(6)<<fk.parsed[i].get_deep()<<setw(20)<<fk.parsed[i].get_value()<<setw(20)<<fk.parsed[i].get_token_value()<<setw(20)<<fk.parsed[i].get_token_type()<<setw(12)<<fk.parsed[i].get_token_relation_code()<<setw(12)<<fk.parsed[i].get_token_relation_shift()<<setw(12)<<fk.parsed[i].get_status()<<setw(12)<<fk.parsed[i].get_token_is_container()<<endl;
 		}
+		
 		/*
 				//whois test
 				string test="0.3";

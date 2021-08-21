@@ -21,11 +21,11 @@ namespace flokka {
 		private:
 			vector<string> data; // Must no duplicate element!
 		public:
-			//typology(string value);
+			// typology(string value);
 			void add(string _value); // Added with control of duplicates
 			int get_index(string _value); // if exist return index, also return -1
-			bool remove(int position);
-			bool remove(string _value); // search & destroy, if don't exist return false
+			// bool remove(int position);
+			// bool remove(string _value); // search & destroy, if don't exist return false
 			string get(int position);
 	};
 
@@ -90,7 +90,18 @@ namespace flokka {
 			int get_deep();
 			void set_deep(int shift);
 	};
-	
+
+	class flokka_analyzer{
+		private:
+			char decimal_divisor;
+		public:
+		    vector <parse_element> parsed;
+			flokka_analyzer();
+			void start(string data, dbtoken token_list);
+			int delete_tokens(string tok);
+			void set_decimal_divisor(char _divisor);
+	};
+
 	void flokka_start(string data, dbtoken token_list,vector <parse_element> &element, char decimal_divisor);
 
 	class cstatus {

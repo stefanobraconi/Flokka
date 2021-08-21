@@ -96,12 +96,14 @@ int flokka::typology::get_index(string _value) {
 	}
 }
 
+/*
 bool flokka::typology::remove(int position) {
 	if (data.begin()+position < data.end()) {
 		data.erase (data.begin()+position);
 		return true;
 	} else return false;
 }
+*/
 
 string flokka::typology::get(int position) {
 	if (data.begin()+position < data.end()) {
@@ -358,6 +360,38 @@ int flokka::parse_element::get_deep() {
 void  flokka::parse_element::set_deep(int shift) {
 	deep=shift;
 }
+
+// FLOKKA_ANALYZER SOURCE
+
+flokka::flokka_analyzer::flokka_analyzer(){
+	decimal_divisor='.';
+}	
+
+int flokka::flokka_analyzer::delete_tokens(string tok){
+    bool flag=false;
+    if (parsed.size()==0) return flag;
+	for (int i=0; i<parsed.size(); i++){
+		if (parsed[i].get_token_value()==tok){
+			parsed.erase(parsed.begin()+i);
+			i=0;
+			flag=true;
+		}
+	}
+	return flag;
+
+}
+
+void flokka::flokka_analyzer::set_decimal_divisor(char _divisor){
+	decimal_divisor=_divisor;
+}
+
+void flokka::flokka_analyzer::start(string data, dbtoken token_list){
+	flokka_start(data, token_list,parsed, decimal_divisor);
+}
+
+
+
+
 
 void string_to_array(char text[],string str) {
 	int dim=str.length();
